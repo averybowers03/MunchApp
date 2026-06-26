@@ -20,6 +20,7 @@
   padding: 25px 20px;
   border-bottom: 1px solid var(--hairline);
   background-color: var(--paper-tint);
+  position: sticky;
 }
 
 .logo .dot { 
@@ -60,4 +61,24 @@
   padding: 8px 12px;
   border-radius: var(--radius);
   cursor: pointer;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 100px 12px;
+  border-bottom: 1px solid var(--hairline);
+  background-color: var(--parakeet);
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 8px 12px;
+  max-width: 400px;
+  font-size: 14px;
+  border-radius: 30px;
 }
