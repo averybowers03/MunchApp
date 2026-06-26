@@ -82,3 +82,46 @@
   font-size: 14px;
   border-radius: 30px;
 }
+
+.filter-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+}
+
+.toggle-chip{
+    display:flex; 
+    align-items:center; 
+    gap:10px;
+    font-size:13px; 
+    font-weight:600; 
+    color: var(--ink-soft);
+  }
+
+  .switch{
+    width:34px; 
+    height:20px; 
+    border-radius:999px; 
+    background: var(--pantry);
+    position:relative; 
+    display:inline-block;
+  }
+  .switch::after{
+    content:''; 
+    position:absolute; 
+    top:2px; 
+    right:2px; 
+    width:16px; 
+    height:16px;
+    background:#fff; 
+    border-radius:50%;
+  }
+  .sort-select{
+    border:1px solid var(--hairline); 
+    border-radius: var(--radius);
+    padding:8px 12px; 
+    font-size:13px; 
+    color: var(--ink-soft); 
+    background:#fff;
+  }
