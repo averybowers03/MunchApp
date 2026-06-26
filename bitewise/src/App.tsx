@@ -21,8 +21,34 @@ function App() {
               </svg>
             </button>
           </div>
-        </div>
       </div>
+      </div>
+        <div className="content-container">
+          <div className="content-item">
+            <h2>Recipe 1</h2>
+            <p>Description of Recipe 1</p>
+          </div>
+          <div className="content-item">
+            <h2>Recipe 2</h2>
+            <p>Description of Recipe 2</p>
+          </div>
+          <div className="content-item">
+            <h2>Recipe 3</h2>
+            <p>Description of Recipe 3</p>
+          </div>
+          <div className="content-item">
+            <h2>Recipe 4</h2>
+            <p>Description of Recipe 4</p>
+          </div>
+          <div className="content-item">
+            <h2>Recipe 5</h2>
+            <p>Description of Recipe 5</p>
+          </div>
+          <div className="content-item">
+            <h2>Recipe 6</h2>
+            <p>Description of Recipe 6</p>
+          </div>
+        </div>
     </>
   )
 }
