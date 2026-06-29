@@ -1,0 +1,15 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("postgres://d2dc8ef3380ac7ebd964789ef408d1ef44e35325778aa3c43fa4a9a91b738a41:sk_rZ8GPvDVWEL6KAV5sNe2H@pooled.db.prisma.io:5432/postgres?sslmode=require")
+}
