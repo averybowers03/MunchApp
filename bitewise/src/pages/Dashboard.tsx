@@ -1,9 +1,163 @@
 
-import './Dashboard.css'
 
 function Dashboard() {
   return (
     <section className="screen" id="home">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        :root{
+          --paper: #FAF8F3;
+          --paper-tint: #f7f5ef;
+          --ink: #1B1B17;
+          --ink-soft: #6B6757;
+          --pantry: #2F4A3D;
+          --pantry-deep: #1F332A;
+          --pantry-tint: #E3E9E1;
+          --parakeet: #1AA36D;
+          --clay-tint: #aff0d6;
+          --hairline: #DEDACD;
+          --radius: 6px;
+        }
+
+        .app-nav{
+          display:flex;
+          align-items:center;
+          justify-content:space-between;
+          padding: 25px 20px;
+          border-bottom: 1px solid var(--hairline);
+          background-color: var(--paper-tint);
+          position: sticky;
+        }
+
+        .logo .dot { 
+          width:8px; 
+          height:8px; 
+          border-radius:50%; 
+          background: var(--parakeet); 
+          display:inline-block; 
+        }
+
+        .logo {
+          font-size: 21px; 
+          font-weight:700; 
+          letter-spacing: -0.01em;
+          display:flex; 
+          align-items:center; 
+          gap:8px;
+        }
+
+        .nav-buttons {
+          display: flex;
+          gap: 10px;
+        }
+
+        .pantry-btn {
+          background-color: var(--pantry);
+          color: var(--paper);
+          border: none;
+          padding: 8px 12px;
+          border-radius: var(--radius);
+          cursor: pointer;
+        }
+
+        .avatar-btn {
+          background-color: var(--parakeet);
+          color: var(--paper);
+          border: none;
+          padding: 8px 12px;
+          border-radius: var(--radius);
+          cursor: pointer;
+        }
+
+        .search-bar {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 8px;
+          padding: 100px 12px;
+          border-bottom: 1px solid var(--hairline);
+          background-color: var(--parakeet);
+        }
+
+        .search-bar input {
+          border: none;
+          outline: none;
+          width: 100%;
+          padding: 8px 12px;
+          max-width: 400px;
+          font-size: 14px;
+          border-radius: 30px;
+        }
+
+        .filter-bar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 28px;
+        }
+
+        .toggle-chip{
+          display:flex; 
+          align-items:center; 
+          gap:10px;
+          font-size:13px; 
+          font-weight:600; 
+          color: var(--ink-soft);
+        }
+
+        .switch{
+          width:34px; 
+          height:20px; 
+          border-radius:999px; 
+          background: var(--pantry);
+          position:relative; 
+          display:inline-block;
+        }
+
+        .switch::after{
+          content:''; 
+          position:absolute; 
+          top:2px; 
+          right:2px; 
+          width:16px; 
+          height:16px;
+          background:#fff; 
+          border-radius:50%;
+        }
+
+        .sort-select{
+          border:1px solid var(--hairline); 
+          border-radius: var(--radius);
+          padding:4px 10px; 
+          font-size:13px; 
+          color: var(--ink-soft); 
+          background:#fff;
+        }
+
+        .results-header{ 
+          padding: 28px 48px 0; 
+        }
+
+        .results-header p{ 
+          color: var(--ink-soft); 
+          font-size:14px; 
+        }
+
+        .recipe-grid{
+          display:grid; 
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+          gap:20px; 
+          padding: 28px 48px;
+        }
+
+        .recipe-card{
+          background: var(--paper); 
+          border-radius: var(--radius); 
+          overflow:hidden; 
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+      `}</style>
       <nav className="app-nav">
         <div className="logo"><span className="dot"></span>Bitewise</div>
         <div className="nav-buttons">
