@@ -12,3 +12,13 @@ app.get('/api/health', (req, res) => {
 
 const PORT = 3001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+app.get('/api/recipes', (req, res) => {
+  fetch('https://api.spoonacular.com/recipes/findByIngredients?ingredients=apples,flour,sugar&number=5&ranking=1&ignorePantry=true&apiKey=' + process.env.SPOONACULAR_API_KEY) // Replace
+    .then(response => response.json())
+    .then(data => res.json(data))
+    .catch(error => {
+      console.error('Error fetching recipes:', error);
+      res.status(500).json({ error: 'Failed to fetch recipes' });
+    });
+});
