@@ -1,4 +1,6 @@
 
+import Navbar from "../components/Navbar";
+
 function Dashboard() {
   return (
     <section className="screen" id="home">
@@ -157,13 +159,8 @@ function Dashboard() {
           box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
       `}</style>
-      <nav className="app-nav">
-        <div className="logo"><span className="dot"></span>Bitewise</div>
-        <div className="nav-buttons">
-          <button className="pantry-btn">Pantry</button>
-          <button className="avatar-btn">Profile</button>
-        </div>
-      </nav>
+
+      <Navbar />
 
         <div className="search-bar">
           <input type="text" placeholder="Search for a recipe..." />
