@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 function Navbar() {
@@ -6,13 +7,11 @@ function Navbar() {
   return (
       
         <nav className="app-nav">
-          
           <div className="logo"><span className="dot"></span>Bitewise</div>
           <div className="nav-buttons">
-            <button className="pantry-btn">Pantry</button>
-            <button className="avatar-btn">Profile</button>
+            <Link to="/pages/Dashboard" className="dashboard-link">Dashboard</Link>
+            <Link to="/pages/PantryPage" className="pantry-link">Pantry</Link>
           </div>
-  
         </nav>
       
   );

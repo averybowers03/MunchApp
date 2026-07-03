@@ -2,13 +2,16 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Dashboard from './pages/Dashboard'
 import PantryPage from './pages/PantryPage'
+import Navbar from './components/Navbar'
 
 function App() {
   return (
-    <BrowserRouter>
+  
+      <BrowserRouter>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/pantry" element={<PantryPage />} />
+        <Route path="/pages/Dashboard" element={<Dashboard />} />
+        <Route path="/pages/PantryPage" element={<PantryPage />} />
       </Routes>
     </BrowserRouter>
   )

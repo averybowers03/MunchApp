@@ -1,10 +1,10 @@
 
-import Navbar from "../components/Navbar";
+//import Navbar from "../components/Navbar";
 
 function PantryPage() {
   return (
     <section className="screen" id="pantry">   
-       <Navbar />
+       {/* <Navbar /> */}
        
        <div>
         <h1>My Pantry</h1>

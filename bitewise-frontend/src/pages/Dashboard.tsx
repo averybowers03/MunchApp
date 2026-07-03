@@ -1,12 +1,12 @@
 
-import Navbar from "../components/Navbar";
+//import Navbar from "../components/Navbar";
 import './Dashboard.css';
 
 function Dashboard() {
   return (
     <section className="screen" id="home">
 
-      <Navbar />
+      {/* <Navbar /> */}
 
         <div className="search-bar">
           <input type="text" placeholder="Search for a recipe..." />
