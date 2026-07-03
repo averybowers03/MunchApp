@@ -1,0 +1,50 @@
+
+.app-nav{
+          display:flex;
+          align-items:center;
+          justify-content:space-between;
+          padding: 25px 20px;
+          border-bottom: 1px solid var(--hairline);
+          background-color: var(--paper-tint);
+          position: sticky;
+        }
+
+        .logo .dot { 
+          width:8px; 
+          height:8px; 
+          border-radius:50%; 
+          background: var(--parakeet); 
+          display:inline-block; 
+        }
+
+        .logo {
+          font-size: 21px; 
+          font-weight:700; 
+          letter-spacing: -0.01em;
+          display:flex; 
+          align-items:center; 
+          gap:8px;
+        }
+
+        .nav-buttons {
+          display: flex;
+          gap: 10px;
+        }
+
+        .pantry-btn {
+          background-color: var(--pantry);
+          color: var(--paper);
+          border: none;
+          padding: 8px 12px;
+          border-radius: var(--radius);
+          cursor: pointer;
+        }
+
+        .avatar-btn {
+          background-color: var(--parakeet);
+          color: var(--paper);
+          border: none;
+          padding: 8px 12px;
+          border-radius: var(--radius);
+          cursor: pointer;
+        }
