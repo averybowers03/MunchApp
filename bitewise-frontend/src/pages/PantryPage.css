@@ -1,0 +1,84 @@
+
+.pantry-header {
+  
+  padding: 20px 40px;
+  display: flex;
+  align-items: baseline;
+  justify-content: left;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pantry-header h1 {
+  font-size: 4rem;
+  margin: 0;
+  color: var(--ink);
+}
+
+.pantry-header span {
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+}
+
+.pantry-search {
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.pantry-search input {
+  
+  padding: 10px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  font-size: 1rem;
+}
+
+.ingredient-input {
+    display: flex;
+}
+
+.qty-input {
+    width: 60px;
+    padding: 10px;
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius);
+    font-size: 1rem;
+}
+
+.unit-input {
+    width: 100px;
+    padding: 10px;
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius);
+    font-size: 1rem;
+}
+
+.pantry-list {
+  padding: 20px 40px;
+  display: list-item;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.pantry-item {
+  background-color: var(--paper);
+  border-top: 1px solid var(--hairline);
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.remove-btn {
+
+  border: none;
+  background-color: var(--paper);
+  color: var(--ink-soft);
+  padding: 10px 20px;
+  cursor: pointer;
+}

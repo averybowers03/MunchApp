@@ -13,7 +13,6 @@ function Navbar() {
             <Link to="/pages/PantryPage" className="pantry-link">Pantry</Link>
           </div>
         </nav>
-      
   );
 }
 
