@@ -1,7 +1,17 @@
 
 import './PantryPage.css';
+import { useState } from 'react';
 
 function PantryPage() {
+
+  const [ingredients, setIngredients] = useState({
+
+    ingredient= '',
+    qty= '',
+    unit= ''
+  });
+  
+  
   return (
     <section className="screen" id="pantry">   
        
