@@ -2,15 +2,35 @@
 import './PantryPage.css';
 import { useState } from 'react';
 
+type Ingredient = {
+  ingredient: string;
+  qty: string;
+  unit: string;
+};
+
 function PantryPage() {
 
-  const [ingredients, setIngredients] = useState({
-
-    ingredient= '',
-    qty= '',
-    unit= ''
+  const [ingredients, setIngredients] = useState<Ingredient>({
+    ingredient: '',
+    qty: '',
+    unit: ''
   });
+
+  const [ingredientList, setIngredientList] = useState<Ingredient[]>([]);
   
+  const addIngredient = () => {
+    // Logic to add ingredient to the pantry list
+    setIngredientList([...ingredientList, { ...ingredients }]);
+    setIngredients({ ingredient: '', qty: '', unit: '' });
+  };
+
+  const removeIngredient = (index: number) => {
+    // Logic to remove ingredient from the pantry list
+    const updatedList = [...ingredientList];
+    updatedList.splice(index, 1);
+    setIngredientList(updatedList);
+  }
+
   
   return (
     <section className="screen" id="pantry">   
@@ -21,28 +41,33 @@ function PantryPage() {
        </div>
 
        <div className="pantry-search">
-        <input type="text" className="ingredient-input" placeholder="Enter ingredient..." />
-        <input type="text" className="qty-input" placeholder="Qty" />
-        <input type="text" className="unit-input" placeholder="Unit" />
-        <button className="add-btn">Add</button>
-       </div>
+
+        <form className="search-form">
+          <input value={ingredients.ingredient} onChange={(e) => setIngredients({ ...ingredients, ingredient: e.target.value })} type="text" className="ingredient-input" placeholder="Enter ingredient..." />
+          <input value={ingredients.qty} onChange={(e) => setIngredients({ ...ingredients, qty: e.target.value })} type="text" className="qty-input" placeholder="Qty" />
+
+          <select className="unit-select" value={ingredients.unit} onChange={(e) => setIngredients({ ...ingredients, unit: e.target.value })}>
+            <option value="">Select Unit</option>
+            <option value="cups">Cups</option>
+            <option value="tablespoons">Tablespoons</option>
+            <option value="teaspoons">Teaspoons</option>
+          </select>
+
+          <button type="button" className="add-btn" onClick={addIngredient}>Add</button>
+        </form>
+        </div>
 
        <div className="pantry-list">
 
-        <div className="pantry-item">
-          <span>Ingredient 1</span>
-          <button className="remove-btn">Remove</button>
-        </div>
+         {ingredientList.map((item, index) => (
+           <div className="pantry-item" key={index}>
+             <span>{item.ingredient} - {item.qty} {item.unit}</span>
+             <button className="remove-btn" onClick={() => removeIngredient(index)}>
+               Remove
+             </button>
+           </div>
+         ))}
 
-        <div className="pantry-item">
-          <span>Ingredient 2</span>
-          <button className="remove-btn">Remove</button>
-        </div>
-
-        <div className="pantry-item">
-          <span>Ingredient 3</span>
-          <button className="remove-btn">Remove</button>
-        </div>
 
        </div> 
     </section>

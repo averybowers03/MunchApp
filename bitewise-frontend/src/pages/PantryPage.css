@@ -36,6 +36,12 @@
   font-size: 1rem;
 }
 
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .ingredient-input {
     display: flex;
 }
