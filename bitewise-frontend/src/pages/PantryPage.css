@@ -34,12 +34,14 @@
   border: 1px solid var(--hairline);
   border-radius: var(--radius);
   font-size: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 .search-form {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 4px;
 }
 
 .ingredient-input {
@@ -49,17 +51,33 @@
 .qty-input {
     width: 60px;
     padding: 10px;
+    color: var(--ink-soft);
     border: 1px solid var(--hairline);
     border-radius: var(--radius);
     font-size: 1rem;
 }
 
-.unit-input {
+.unit-select {
     width: 100px;
     padding: 10px;
     border: 1px solid var(--hairline);
     border-radius: var(--radius);
+    color: var(--ink-soft);
     font-size: 1rem;
+}
+
+.unit-select option {
+    color: var(--ink-soft);
+}
+
+.add-btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--paper);
+    color: var(--ink-soft);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    cursor: pointer;
 }
 
 .pantry-list {

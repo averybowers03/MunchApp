@@ -22,10 +22,10 @@ function PantryPage() {
           <input value={ingredients.qty} onChange={(e) => setIngredients({ ...ingredients, qty: e.target.value })} type="text" className="qty-input" placeholder="Qty" />
 
           <select className="unit-select" value={ingredients.unit} onChange={(e) => setIngredients({ ...ingredients, unit: e.target.value })}>
-            <option value="">Select Unit</option>
+            <option value="">Unit</option>
             <option value="cups">Cups</option>
-            <option value="tablespoons">Tablespoons</option>
-            <option value="teaspoons">Teaspoons</option>
+            <option value="tablespoons">Tbsp</option>
+            <option value="teaspoons">Tsp</option>
           </select>
 
           <button type="button" className="add-btn" onClick={addIngredient}>Add</button>
