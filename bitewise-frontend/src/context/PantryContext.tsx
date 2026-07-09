@@ -1,5 +1,5 @@
 
-import { createContext, useContext, useState } from 'react';
+import { createContext, useState, ReactNode } from "react";
 
 type Ingredient = {
   ingredient: string;
@@ -7,30 +7,44 @@ type Ingredient = {
   unit: string;
 };
 
-const PantryContext = createContext({
-  ingredients: { ingredient: '', qty: '', unit: '' },
-  ingredientList: [] as Ingredient[],
-  setIngredients: (ingredients: Ingredient) => {},
-  setIngredientList: (ingredientList: Ingredient[]) => {},
-});
-
-const [ingredients, setIngredients] = useState<Ingredient>({
-    ingredient: '',
-    qty: '',
-    unit: ''
-  });
-
-  const [ingredientList, setIngredientList] = useState<Ingredient[]>([]);
+export const PantryContext = createContext({
   
-  const addIngredient = () => {
-    // Logic to add ingredient to the pantry list
-    setIngredientList([...ingredientList, { ...ingredients }]);
-    setIngredients({ ingredient: '', qty: '', unit: '' });
-  };
+  ingredients: { ingredient: '', qty: '', unit: '' },
+  setIngredients: (ingredients: Ingredient) => {},
+  ingredientList: [] as Ingredient[],
+  setIngredientList: (ingredientList: Ingredient[]) => {},
+  addIngredient: () => {},
+  removeIngredient: (index: number) => {}
+});
+  
+export function PantryProvider({ children } : { children: ReactNode }) {
 
-  const removeIngredient = (index: number) => {
-    // Logic to remove ingredient from the pantry list
-    const updatedList = [...ingredientList];
-    updatedList.splice(index, 1);
-    setIngredientList(updatedList);
-  }
+  const [ingredients, setIngredients] = useState<Ingredient>({
+      ingredient: '',
+      qty: '',
+      unit: ''
+    });
+  
+    const [ingredientList, setIngredientList] = useState<Ingredient[]>([]);
+    
+    const addIngredient = () => {
+      // Logic to add ingredient to the pantry list
+      setIngredientList([...ingredientList, { ...ingredients }]);
+      setIngredients({ ingredient: '', qty: '', unit: '' });
+    };
+  
+    const removeIngredient = (index: number) => {
+      // Logic to remove ingredient from the pantry list
+      const updatedList = [...ingredientList];
+      updatedList.splice(index, 1);
+      setIngredientList(updatedList);
+    }
+  
+  return (
+    <PantryContext.Provider value={{ ingredients, setIngredients, ingredientList, setIngredientList, addIngredient, removeIngredient }}>
+      {children}
+    </PantryContext.Provider>
+  )
+}
+
+

@@ -1,37 +1,12 @@
 
 import './PantryPage.css';
-import { useState } from 'react';
-
-type Ingredient = {
-  ingredient: string;
-  qty: string;
-  unit: string;
-};
+import { useContext } from 'react';
+import { PantryContext } from '../context/PantryContext';
 
 function PantryPage() {
 
-  const [ingredients, setIngredients] = useState<Ingredient>({
-    ingredient: '',
-    qty: '',
-    unit: ''
-  });
+  const { ingredients, setIngredients, ingredientList, addIngredient, removeIngredient } = useContext(PantryContext);
 
-  const [ingredientList, setIngredientList] = useState<Ingredient[]>([]);
-  
-  const addIngredient = () => {
-    // Logic to add ingredient to the pantry list
-    setIngredientList([...ingredientList, { ...ingredients }]);
-    setIngredients({ ingredient: '', qty: '', unit: '' });
-  };
-
-  const removeIngredient = (index: number) => {
-    // Logic to remove ingredient from the pantry list
-    const updatedList = [...ingredientList];
-    updatedList.splice(index, 1);
-    setIngredientList(updatedList);
-  }
-
-  
   return (
     <section className="screen" id="pantry">   
        
