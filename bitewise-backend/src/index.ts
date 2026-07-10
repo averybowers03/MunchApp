@@ -22,3 +22,13 @@ app.get('/api/recipes', (req, res) => {
       res.status(500).json({ error: 'Failed to fetch recipes' });
     });
 });
+
+app.get('/api/ingredients', (req, res) => {
+  fetch('https://api.spoonacular.com/food/ingredients/autocomplete?query=appl&number=5&apiKey=' + process.env.SPOONACULAR_API_KEY)
+    .then(response => response.json())
+    .then(data => res.json(data))
+    .catch(error => {
+      console.error('Error fetching ingredients:', error);
+      res.status(500).json({ error: 'Failed to fetch ingredients' });
+    });
+  });
