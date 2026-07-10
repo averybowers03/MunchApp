@@ -28,7 +28,7 @@ function PantryPage() {
             <option value="teaspoons">Tsp</option>
           </select>
 
-          <button type="button" className="add-btn" onClick={addIngredient}>Add</button>
+          <button type="button" className="add-btn" onClick={addIngredient}>+</button>
         </form>
         </div>
 
