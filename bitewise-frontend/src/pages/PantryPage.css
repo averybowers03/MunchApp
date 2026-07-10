@@ -70,7 +70,7 @@
     border: none;
     font-size: 1.25rem;
     background-color: var(--paper-tint);
-
+    cursor: pointer;
 }
 
 .pantry-list {
