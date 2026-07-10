@@ -1,11 +1,12 @@
 
 import './PantryPage.css';
+import IngredientSearch  from '../components/IngredientSearch';
 import { useContext } from 'react';
 import { PantryContext } from '../context/PantryContext';
 
 function PantryPage() {
-
-  const { ingredients, setIngredients, ingredientList, addIngredient, removeIngredient } = useContext(PantryContext);
+  
+  const { ingredientList, removeIngredient } = useContext(PantryContext);
 
   return (
     <section className="screen" id="pantry">   
@@ -15,22 +16,7 @@ function PantryPage() {
         <span>0 items available</span>
        </div>
 
-       <div className="pantry-search">
-
-        <form className="search-form">
-          <input value={ingredients.ingredient} onChange={(e) => setIngredients({ ...ingredients, ingredient: e.target.value })} type="text" className="ingredient-input" placeholder="Enter ingredient..." />
-          <input value={ingredients.qty} onChange={(e) => setIngredients({ ...ingredients, qty: e.target.value })} type="text" className="qty-input" placeholder="Qty" />
-
-          <select className="unit-select" value={ingredients.unit} onChange={(e) => setIngredients({ ...ingredients, unit: e.target.value })}>
-            <option value="">Unit</option>
-            <option value="cups">Cups</option>
-            <option value="tablespoons">Tbsp</option>
-            <option value="teaspoons">Tsp</option>
-          </select>
-
-          <button type="button" className="add-btn" onClick={addIngredient}>+</button>
-        </form>
-        </div>
+       <IngredientSearch />
 
        <div className="pantry-list">
 
