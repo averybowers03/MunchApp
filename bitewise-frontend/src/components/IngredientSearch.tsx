@@ -7,11 +7,21 @@ function IngredientSearch() {
   const { ingredients, setIngredients, addIngredient } = useContext(PantryContext);
 
   const [query , setQuery] = useState('');
-  const [suggestions, setSuggestions] = useState(query);
+  const [suggestions, setSuggestions] = useState([]);
 
   useEffect(() => {
     const handler = setTimeout(() => {
-      setSuggestions(query);
+      if (query.length === 0) 
+        {
+          setSuggestions([]);
+          return;
+        }
+      fetch(`/api/ingredients?query=${query}`)
+      .then(res => res.json())
+      .then(data => setSuggestions(data))
+      .catch(error => {
+      console.error('Error fetching ingredients:', error);
+    });
     }, 500);
 
     return () => {

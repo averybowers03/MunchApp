@@ -6,8 +6,6 @@ function Dashboard() {
   return (
     <section className="screen" id="home">
 
-      {/* <Navbar /> */}
-
         <div className="search-bar">
           <input type="text" placeholder="Search for a recipe..." />
         </div>
@@ -25,7 +23,6 @@ function Dashboard() {
       <div className="recipe-grid">
 
         <div className="recipe-card">
-          <img src="https://via.placeholder.com/150" alt="Recipe" />
         </div>
       </div>  
         
