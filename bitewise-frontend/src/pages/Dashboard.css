@@ -60,11 +60,11 @@
         }
 
         .sort-select {
-          border:1px solid var(--hairline); 
+          border:1px solid var(--hairline-soft); 
           border-radius: var(--radius);
           padding:4px 10px; 
           font-size:13px; 
-          color: var(--ink-soft); 
+          color: var(--ink); 
           background:#fff;
         }
 
