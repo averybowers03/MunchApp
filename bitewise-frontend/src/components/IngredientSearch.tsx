@@ -2,6 +2,8 @@
 import { useContext, useState, useEffect } from 'react';
 import { PantryContext } from '../context/PantryContext';
 
+
+
 function IngredientSearch() {
     
   const { ingredients, setIngredients, addIngredient } = useContext(PantryContext);
@@ -35,6 +37,12 @@ function IngredientSearch() {
     }
   }, [suggestions]);
 
+  function HandleClick(name : string) {
+
+    addIngredient(name)
+    setQuery('') 
+}
+
     return (
 
         <div className="pantry-search">
@@ -50,7 +58,7 @@ function IngredientSearch() {
             <option value="teaspoons">Tsp</option>
           </select>
 
-          <button type="button" className="add-btn" onClick={addIngredient}>+</button>
+          <button type="button" className="add-btn" onClick={() => HandleClick(query)}>+</button>
         </form>
         </div>
     );

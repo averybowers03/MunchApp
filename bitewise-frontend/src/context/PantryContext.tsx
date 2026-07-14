@@ -13,7 +13,7 @@ export const PantryContext = createContext({
   setIngredients: (ingredients: Ingredient) => {},
   ingredientList: [] as Ingredient[],
   setIngredientList: (ingredientList: Ingredient[]) => {},
-  addIngredient: () => {},
+  addIngredient: (name: string) => {},
   removeIngredient: (index: number) => {}
 });
   
@@ -27,9 +27,9 @@ export function PantryProvider({ children } : { children: ReactNode }) {
   
     const [ingredientList, setIngredientList] = useState<Ingredient[]>([]);
     
-    const addIngredient = () => {
+    const addIngredient = (name : string) => {
       // Logic to add ingredient to the pantry list
-      setIngredientList([...ingredientList, { ...ingredients }]);
+      setIngredientList([...ingredientList, { ingredient: name, qty: ingredients.qty, unit: ingredients.unit}]);
       setIngredients({ ingredient: '', qty: '', unit: '' });
     };
   
