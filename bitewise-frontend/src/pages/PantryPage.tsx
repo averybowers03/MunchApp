@@ -28,8 +28,7 @@ function PantryPage() {
              </button>
            </div>
          ))}
-
-
+         
        </div> 
     </section>
   );
