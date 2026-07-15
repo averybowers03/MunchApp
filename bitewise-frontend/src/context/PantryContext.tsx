@@ -1,5 +1,6 @@
 
-import { createContext, useState, ReactNode } from "react";
+import { createContext, useState} from "react";
+import type { ReactNode } from "react";
 
 type Ingredient = {
   ingredient: string;
@@ -25,7 +26,8 @@ export function PantryProvider({ children } : { children: ReactNode }) {
       unit: ''
     });
   
-    const [ingredientList, setIngredientList] = useState<Ingredient[]>([]);
+    const [ingredientList, setIngredientList] = useState<Ingredient[]>();
+
     
     const addIngredient = (name : string) => {
       // Logic to add ingredient to the pantry list
