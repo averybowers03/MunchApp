@@ -23,7 +23,14 @@ function Dashboard() {
       <div className="recipe-grid">
 
         <div className="recipe-card">
+          <img src="https://loremflickr.com/640/420/quinoa,bowl" alt=""/>
+          <div className="card-body">
+            <h3>Roasted Vegetable Quinoa Bowl</h3>
+            <div className="card-meta">35 MIN &middot; 2 SERVINGS</div>
+            <span className="chip-full">Fully stocked</span>
+          </div>
         </div>
+        
       </div>  
         
     </section>
