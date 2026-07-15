@@ -37,6 +37,7 @@
   background-color: var(--paper-tint);
   border-radius: var(--radius);
   border: 1px solid var(--hairline);
+  color: var(--ink-soft);
 }
 
 .search-wrapper {
@@ -88,7 +89,6 @@
     padding: 10px;
     border: 1px solid var(--hairline);
     border-radius: var(--radius);
-    font-size: 0.75rem;
 }
 
 .add-btn {

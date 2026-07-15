@@ -33,12 +33,12 @@
 
         .pantry-link, .dashboard-link{
           cursor: pointer;
-          padding: 10px 12px;
+          padding: 8px 12px;
           text-decoration: none;
           font-size: 1rem;
           font-weight: bold;
           color: var(--ink);
-          border: 1px solid var(--parakeet);
+          border: 1px solid var(--accent);
           border-radius: var(--radius);
         }
 

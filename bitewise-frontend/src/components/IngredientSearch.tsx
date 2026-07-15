@@ -1,5 +1,5 @@
 
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useState, useEffect, useRef } from 'react';
 import { PantryContext } from '../context/PantryContext';
 
 type Suggestion = {
@@ -15,13 +15,16 @@ function IngredientSearch() {
   const [query , setQuery] = useState('');
   const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
 
+  const skipFetch = useRef(false);
+
   useEffect(() => {
     const handler = setTimeout(() => {
-      if (query.length === 0) 
-        {
+      if (query.length == 0 || skipFetch.current == true) 
+      {
           setSuggestions([]);
+          skipFetch.current = false
           return;
-        }
+      }
       fetch(`/api/ingredients?query=${query}`)
       .then(res => res.json())
       .then(data => setSuggestions(data))
@@ -49,6 +52,7 @@ function IngredientSearch() {
 
   function fillQuery(fill : string) {
 
+    skipFetch.current = true
     setQuery(fill)
     setSuggestions([])
   }
