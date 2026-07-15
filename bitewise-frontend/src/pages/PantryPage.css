@@ -52,6 +52,7 @@
     width: 100%;
     border: 1px solid var(--hairline);
     border-radius: var(--radius);
+    font-size: small;
 }
 
 .suggestion-list {
@@ -81,6 +82,7 @@
     padding: 10px;
     border: 1px solid var(--hairline);
     border-radius: var(--radius);
+    font-size: small;
 }
 
 .unit-select {
@@ -89,6 +91,7 @@
     padding: 10px;
     border: 1px solid var(--hairline);
     border-radius: var(--radius);
+    font-size: small;
 }
 
 .add-btn {
