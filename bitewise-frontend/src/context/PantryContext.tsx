@@ -1,5 +1,5 @@
 
-import { createContext, useState} from "react";
+import { createContext, useEffect, useState} from "react";
 import type { ReactNode } from "react";
 
 type Ingredient = {
@@ -25,9 +25,23 @@ export function PantryProvider({ children } : { children: ReactNode }) {
       qty: '',
       unit: ''
     });
-  
-    const [ingredientList, setIngredientList] = useState<Ingredient[]>([]);
 
+    const [ingredientList, setIngredientList] = useState<Ingredient[]>(() => {
+
+        const storedData = localStorage.getItem('ingredient');
+
+        if (storedData) {
+          const parsedData = JSON.parse(storedData);
+          return(parsedData)
+        }
+        return([])
+    });
+    
+
+    useEffect(() => {
+      localStorage.setItem('ingredient', JSON.stringify(ingredientList));
+    }, [ingredientList]);
+    
     
     const addIngredient = (name : string) => {
       // Logic to add ingredient to the pantry list
