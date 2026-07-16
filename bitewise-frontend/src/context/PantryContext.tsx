@@ -26,7 +26,7 @@ export function PantryProvider({ children } : { children: ReactNode }) {
       unit: ''
     });
   
-    const [ingredientList, setIngredientList] = useState<Ingredient[]>();
+    const [ingredientList, setIngredientList] = useState<Ingredient[]>([]);
 
     
     const addIngredient = (name : string) => {
