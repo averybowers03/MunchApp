@@ -7,16 +7,33 @@ type Recipe = {
   id: number;
   image : string;
   title : string;
+  prepTime: number;
+  cookTime: number;
+  readyInMin: number;
+  nutrition : [];
+  summary: string;
+  useIngNum : number;
   missedIngNum : number;
   missedIng : [];
-  prepTime: string;
-  cookTime: string;
+  
 
 };
 
 export const RecipeContext = createContext({
 
-    recipes: { id: 0, image: '', title: '', missedIngNum: 0, missedIng: [], prepTime: '', cookTime: ''},
+    recipes: {
+        id: 0,
+        image: '',
+        title: '',
+        prepTime: 0,
+        cookTime: 0,
+        readyInMin: 0,
+        nutrition: [],
+        summary: '',
+        useIngNum: 0,
+        missedIngNum: 0,
+        missedIng: []
+    },
     setRecipes: (recipes: Recipe) => {},
     recipeList: [] as Recipe[],
     setRecipeList: (recipeList: Recipe[]) => {}
@@ -30,10 +47,14 @@ export function RecipeProvider({children} : { children : ReactNode}) {
         id: 0,
         image : '',
         title : '',
+        prepTime: 0,
+        cookTime: 0,
+        readyInMin: 0,
+        nutrition: [],
+        summary: '',
+        useIngNum: 0,
         missedIngNum : 0,
-        missedIng : [],
-        prepTime: '',
-        cookTime: ''
+        missedIng : []
     })
 
     const [recipeList, setRecipeList] = useState<Recipe[]>([]);
