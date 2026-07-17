@@ -1,13 +1,19 @@
 
-//import Navbar from "../components/Navbar";
+//import { useState } from 'react';
 import './Dashboard.css';
 
 function Dashboard() {
+
+  //const [query , setQuery] = useState('');
+
   return (
     <section className="screen" id="home">
 
         <div className="search-bar">
-          <input type="text" placeholder="Search for a recipe..." />
+          <form className='recipe-search'>
+            <input type="text" placeholder="Search for a recipe..."/>
+            <button type='button' className='search-btn'></button>
+          </form>
         </div>
 
       <div className="filter-bar">
