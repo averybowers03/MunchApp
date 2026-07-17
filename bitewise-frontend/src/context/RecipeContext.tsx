@@ -2,6 +2,23 @@
 import { createContext, useState } from "react";
 import type { ReactNode } from "react";
 
+type Nutrient = {
+
+    name: string;
+    amount: number;
+    unit: string;
+    dailyNeed: number;
+}
+
+type MissedIngredients = {
+
+    id: number;
+    name: string;
+    amount: number;
+    unit: string;
+    unitShort: string;
+}
+
 type Recipe = {
 
   id: number;
@@ -10,13 +27,11 @@ type Recipe = {
   prepTime: number;
   cookTime: number;
   readyInMin: number;
-  nutrition : [];
+  nutrition : [Nutrient];
   summary: string;
   useIngNum : number;
   missedIngNum : number;
-  missedIng : [];
-  
-
+  missedIng : [MissedIngredients];
 };
 
 export const RecipeContext = createContext({
