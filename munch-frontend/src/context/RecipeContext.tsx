@@ -51,7 +51,7 @@ export const RecipeContext = createContext({
     },
     setRecipes: (recipes: Recipe) => {},
     recipeList: [] as Recipe[],
-    setRecipeList: (recipeList: Recipe[]) => {}
+    searchRecipes: (query: string, ingList: []) => {}
 });
 
 export function RecipeProvider({children} : { children : ReactNode}) {
@@ -74,8 +74,20 @@ export function RecipeProvider({children} : { children : ReactNode}) {
 
     const [recipeList, setRecipeList] = useState<Recipe[]>([]);
 
+    const searchRecipes = (query: string, ingList: []) => {
+
+        setRecipeList([]);
+
+         fetch(`/api/recipes/search?query=${query}&ingList=${ingList}`)
+        .then(res => res.json())
+        .then(data => setRecipeList(data))
+        .catch(error => {
+            console.error('Error fetching ingredients:', error);
+        })
+    }
+
     return (
-        <RecipeContext.Provider value={{recipes, setRecipes, recipeList, setRecipeList}}>
+        <RecipeContext.Provider value={{recipes, setRecipes, recipeList, searchRecipes}}>
             {children}
         </RecipeContext.Provider>
     )
