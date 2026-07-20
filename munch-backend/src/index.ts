@@ -45,3 +45,14 @@ app.get('/api/ingredients', (req, res) => {
       res.status(500).json({ error: 'Failed to fetch recipes' });
     });
 });
+
+app.get('/api/recipes/randomSearch', (req, res) => {
+  const { query } = req.query;
+  fetch(`https://api.spoonacular.com/recipes/complexSearch?includeIngredients=${query}&fillIngredients=true&number=100&ignorePantry=true&sort=random&apiKey=` + process.env.SPOONACULAR_API_KEY) // Replace
+    .then(response => response.json())
+    .then(data => res.json(data))
+    .catch(error => {
+      console.error('Error fetching recipes:', error);
+      res.status(500).json({ error: 'Failed to fetch recipes' });
+    });
+});
