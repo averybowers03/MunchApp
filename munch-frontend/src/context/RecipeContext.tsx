@@ -27,11 +27,11 @@ type Recipe = {
   prepTime: number;
   cookTime: number;
   readyInMin: number;
-  nutrition : [Nutrient];
+  nutrition : Nutrient[];
   summary: string;
   useIngNum : number;
   missedIngNum : number;
-  missedIng : [MissedIngredients];
+  missedIng : MissedIngredients[];
 };
 
 export const RecipeContext = createContext({
@@ -43,11 +43,11 @@ export const RecipeContext = createContext({
         prepTime: 0,
         cookTime: 0,
         readyInMin: 0,
-        nutrition: [],
+        nutrition: [] as Nutrient[],
         summary: '',
         useIngNum: 0,
         missedIngNum: 0,
-        missedIng: []
+        missedIng: [] as MissedIngredients[]
     },
     setRecipes: (recipes: Recipe) => {},
     recipeList: [] as Recipe[],
