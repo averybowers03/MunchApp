@@ -13,7 +13,6 @@ export const PantryContext = createContext({
   ingredients: { ingredient: '', qty: '', unit: '' },
   setIngredients: (ingredients: Ingredient) => {},
   ingredientList: [] as Ingredient[],
-  setIngredientList: (ingredientList: Ingredient[]) => {},
   addIngredient: (name: string) => {},
   removeIngredient: (index: number) => {}
 });
