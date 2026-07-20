@@ -57,7 +57,7 @@ export function PantryProvider({ children } : { children: ReactNode }) {
     }
   
   return (
-    <PantryContext.Provider value={{ ingredients, setIngredients, ingredientList, setIngredientList, addIngredient, removeIngredient }}>
+    <PantryContext.Provider value={{ ingredients, setIngredients, ingredientList, addIngredient, removeIngredient }}>
       {children}
     </PantryContext.Provider>
   )
