@@ -24,14 +24,15 @@ type Recipe = {
   id: number;
   image : string;
   title : string;
-  prepTime: number;
-  cookTime: number;
-  readyInMin: number;
-  nutrition : Nutrient[];
+  preparationMinutes: number;
+  cookingMinutes: number;
+  readyInMinutes: number;
+  servings: number;
+  //nutrition : Nutrient[];
   summary: string;
-  useIngNum : number;
-  missedIngNum : number;
-  missedIng : MissedIngredients[];
+  usedIngredientCount : number;
+  missedIngredientCount : number;
+  missedIngredients : MissedIngredients[];
 };
 
 export const RecipeContext = createContext({
@@ -40,18 +41,20 @@ export const RecipeContext = createContext({
         id: 0,
         image: '',
         title: '',
-        prepTime: 0,
-        cookTime: 0,
-        readyInMin: 0,
-        nutrition: [] as Nutrient[],
+        preparationMinutes: 0,
+        cookingMinutes: 0,
+        readyInMinutes: 0,
+        servings: 0,
+        //nutrition: [] as Nutrient[],
         summary: '',
-        useIngNum: 0,
-        missedIngNum: 0,
-        missedIng: [] as MissedIngredients[]
+        usedIngredientCount: 0,
+        missedIngredientCount: 0,
+        missedIngredients: [] as MissedIngredients[]
     },
     setRecipes: (recipes: Recipe) => {},
     recipeList: [] as Recipe[],
-    searchRecipes: (query: string, ingList: []) => {}
+    searchRecipes: (query: string, ingList: string) => {},
+    randomRecipes: (ingList: string) => {}
 });
 
 export function RecipeProvider({children} : { children : ReactNode}) {
@@ -62,19 +65,20 @@ export function RecipeProvider({children} : { children : ReactNode}) {
         id: 0,
         image : '',
         title : '',
-        prepTime: 0,
-        cookTime: 0,
-        readyInMin: 0,
-        nutrition: [],
+        preparationMinutes: 0,
+        cookingMinutes: 0,
+        readyInMinutes: 0,
+        servings: 0,
+        //nutrition: [],
         summary: '',
-        useIngNum: 0,
-        missedIngNum : 0,
-        missedIng : []
+        usedIngredientCount: 0,
+        missedIngredientCount : 0,
+        missedIngredients : []
     })
 
     const [recipeList, setRecipeList] = useState<Recipe[]>([]);
 
-    const searchRecipes = (query: string, ingList: []) => {
+    const searchRecipes = (query: string, ingList: string) => {
 
         setRecipeList([]);
 
@@ -86,8 +90,20 @@ export function RecipeProvider({children} : { children : ReactNode}) {
         })
     }
 
+    const randomRecipes = (ingList: string) => {
+
+        setRecipeList([]);
+
+         fetch(`/api/recipes/randomSearch?ingList=${ingList}`)
+        .then(res => res.json())
+        .then(data => setRecipeList(data))
+        .catch(error => {
+            console.error('Error fetching ingredients:', error);
+        })
+    }
+
     return (
-        <RecipeContext.Provider value={{recipes, setRecipes, recipeList, searchRecipes}}>
+        <RecipeContext.Provider value={{recipes, setRecipes, recipeList, searchRecipes, randomRecipes}}>
             {children}
         </RecipeContext.Provider>
     )
