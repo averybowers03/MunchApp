@@ -47,8 +47,8 @@ app.get('/api/ingredients', (req, res) => {
 });
 
 app.get('/api/recipes/randomSearch', (req, res) => {
-  const { query } = req.query;
-  fetch(`https://api.spoonacular.com/recipes/complexSearch?includeIngredients=garlic,cheese&fillIngredients=true&addRecipeInformation=true&&number=100&ignorePantry=true&sort=random&apiKey=` + process.env.SPOONACULAR_API_KEY) // Replace
+  const { ingList } = req.query;
+  fetch(`https://api.spoonacular.com/recipes/complexSearch?includeIngredients=${ingList}&fillIngredients=true&addRecipeInformation=true&&number=10&ignorePantry=true&sort=random&apiKey=` + process.env.SPOONACULAR_API_KEY) // Replace
     .then(response => response.json())
     .then(data => res.json(data.results))
     .catch(error => {

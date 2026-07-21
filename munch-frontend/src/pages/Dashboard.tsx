@@ -1,18 +1,34 @@
 
-//import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import './Dashboard.css';
+import { PantryContext} from '../context/PantryContext';
+import { RecipeContext} from '../context/RecipeContext';
 
 function Dashboard() {
+  
+  const { ingredientList } = useContext(PantryContext);
+  const { searchRecipes, randomRecipes, recipeList } = useContext(RecipeContext);
+  
+  const [query , setQuery] = useState('');
+  const ingredients = ingredientList.map(i => i.ingredient).join(',')
 
-  //const [query , setQuery] = useState('');
+    useEffect(() => {
+      
+      if (ingredientList.length > 0)
+      {
+        randomRecipes(ingredients)
+      }
+      
+
+    }, [ingredientList]);
 
   return (
     <section className="screen" id="home">
 
         <div className="search-bar">
           <form className='recipe-search'>
-            <input type="text" placeholder="Search for a recipe..."/>
-            <button type='button' className='search-btn'></button>
+            <input type="text" onChange={(e) => setQuery(e.target.value)} placeholder="Search for a recipe..."/>
+            <button type='button' className='search-btn' onClick={() => searchRecipes(query, ingredients)}></button>
           </form>
         </div>
 
@@ -27,15 +43,16 @@ function Dashboard() {
       </div>
 
       <div className="recipe-grid">
-
-        <div className="recipe-card">
-          <img src="https://loremflickr.com/640/420/quinoa,bowl" alt=""/>
-          <div className="card-body">
-            <h3>Roasted Vegetable Quinoa Bowl</h3>
-            <div className="card-meta">35 MIN &middot; 2 SERVINGS</div>
-            <span className="chip-full">Fully stocked</span>
+        
+        {recipeList.map((recipes, index) => (
+          <div className="recipe-card" key={index}>
+            <img src={recipes.image} alt=""/>
+            <div className="card-body">
+              <h3>{recipes.title}</h3>
+              <div className="card-meta">{recipes.readyInMinutes} &middot; {recipes.servings} SERVINGS</div>
+            </div>
           </div>
-        </div>
+        ))}
         
       </div>  
         
