@@ -46,8 +46,11 @@ function IngredientSearch() {
 
   function HandleClick(name : string) {
 
-    addIngredient(name)
-    setQuery('') 
+    if (name.length != 0 && ingredients.qty != '' && ingredients.unit != '')
+      {
+        addIngredient(name.toLocaleLowerCase())
+        setQuery('')
+      }
   }
 
   function fillQuery(fill : string) {
@@ -76,9 +79,12 @@ function IngredientSearch() {
 
               <select className="unit-select" value={ingredients.unit} onChange={(e) => setIngredients({ ...ingredients, unit: e.target.value })}>
                 <option value="">Unit</option>
-                <option value="cups">Cups</option>
-                <option value="tablespoons">Tbsp</option>
-                <option value="teaspoons">Tsp</option>
+                <option value="cups">cups</option>
+                <option value="tbsp">tbsp</option>
+                <option value="tsp">tsp</option>
+                <option value="each">each</option>
+                <option value="g">gram</option>
+                <option value="kg">kg</option>
               </select>
 
               <button type="button" className="add-btn" onClick={() => HandleClick(query)}>+</button>
