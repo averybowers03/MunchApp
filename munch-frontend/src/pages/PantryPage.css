@@ -18,6 +18,7 @@
 .pantry-header span {
   font-size: 0.875rem;
   color: var(--ink-soft);
+  font-variant: small-caps;
 }
 
 .pantry-search {
@@ -116,9 +117,14 @@
   padding: 20px 0;
   display: flex;
   flex-direction: row;
-  align-items: left;
+  align-items:baseline;
   text-align: center;
   justify-content: space-between;
+}
+
+.pantry-item span {
+  font-variant: small-caps;
+  font-size: 18px;
 }
 
 .remove-btn {
@@ -127,5 +133,10 @@
   background-color: var(--paper);
   color: var(--ink-soft);
   padding: 10px 20px;
+}
+
+.remove-btn:hover {
+
+  color: rgb(171, 29, 29);
   cursor: pointer;
 }
