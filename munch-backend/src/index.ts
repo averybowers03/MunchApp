@@ -37,7 +37,7 @@ app.get('/api/ingredients', (req, res) => {
 
   app.get('/api/recipes/search', (req, res) => {
   const { query, ingList } = req.query;
-  fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${query}&includeIngredients=${ingList}&fillIngredients=true&number=100&ignorePantry=true&apiKey=` + process.env.SPOONACULAR_API_KEY) // Replace
+  fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${query}&includeIngredients=${ingList}&fillIngredients=true&addRecipeInformation=true&number=100&ignorePantry=true&apiKey=` + process.env.SPOONACULAR_API_KEY) // Replace
     .then(response => response.json())
     .then(data => res.json(data.results))
     .catch(error => {
@@ -48,7 +48,7 @@ app.get('/api/ingredients', (req, res) => {
 
 app.get('/api/recipes/randomSearch', (req, res) => {
   const { ingList } = req.query;
-  fetch(`https://api.spoonacular.com/recipes/complexSearch?includeIngredients=${ingList}&fillIngredients=true&addRecipeInformation=true&&number=10&ignorePantry=true&sort=random&apiKey=` + process.env.SPOONACULAR_API_KEY) // Replace
+  fetch(`https://api.spoonacular.com/recipes/complexSearch?includeIngredients=${ingList}&fillIngredients=true&addRecipeInformation=true&number=10&ignorePantry=true&sort=random&apiKey=` + process.env.SPOONACULAR_API_KEY) // Replace
     .then(response => response.json())
     .then(data => res.json(data.results))
     .catch(error => {
