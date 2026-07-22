@@ -20,7 +20,7 @@ function Dashboard() {
       }
       
 
-    }, [ingredientList]);
+    }, [ingredientList.length]);
 
   return (
     <section className="screen" id="home">
@@ -39,7 +39,7 @@ function Dashboard() {
 
       <div className="results-header">
         <h2>Results</h2>
-        <p>Showing 1-10 of 100 recipes</p>
+        <p>Showing {recipeList.length} recipes</p>
       </div>
 
       <div className="recipe-grid">
@@ -49,7 +49,7 @@ function Dashboard() {
             <img src={recipes.image} alt=""/>
             <div className="card-body">
               <h3>{recipes.title}</h3>
-              <div className="card-meta">{recipes.readyInMinutes} &middot; {recipes.servings} SERVINGS</div>
+              <div className="card-meta">{recipes.readyInMinutes} MIN &middot; SERVES {recipes.servings} </div>
             </div>
           </div>
         ))}
