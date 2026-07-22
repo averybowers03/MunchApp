@@ -28,7 +28,7 @@ type Recipe = {
   cookingMinutes: number;
   readyInMinutes: number;
   servings: number;
-  //nutrition : Nutrient[];
+  nutrition : Nutrient[];
   summary: string;
   usedIngredientCount : number;
   missedIngredientCount : number;
@@ -45,7 +45,7 @@ export const RecipeContext = createContext({
         cookingMinutes: 0,
         readyInMinutes: 0,
         servings: 0,
-        //nutrition: [] as Nutrient[],
+        nutrition: [] as Nutrient[],
         summary: '',
         usedIngredientCount: 0,
         missedIngredientCount: 0,
@@ -69,7 +69,7 @@ export function RecipeProvider({children} : { children : ReactNode}) {
         cookingMinutes: 0,
         readyInMinutes: 0,
         servings: 0,
-        //nutrition: [],
+        nutrition: [],
         summary: '',
         usedIngredientCount: 0,
         missedIngredientCount : 0,
@@ -94,7 +94,9 @@ export function RecipeProvider({children} : { children : ReactNode}) {
 
         setRecipeList([]);
 
-         fetch(`/api/recipes/randomSearch?ingList=${ingList}`)
+        const params = new URLSearchParams({ ingList })
+
+         fetch(`/api/recipes/randomSearch?${params}`)
         .then(res => res.json())
         .then(data => setRecipeList(data))
         .catch(error => {

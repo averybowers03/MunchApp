@@ -63,7 +63,7 @@ function IngredientSearch() {
           
             <form className="search-form">
               <div className='search-wrapper'>
-                <input value={query} onChange={(e) => setQuery(e.target.value)} type="text" className="ingredient-input" placeholder="Enter ingredient..." />
+                <input value={query} onChange={(e) => setQuery(e.target.value)} type="text" className="ingredient-input" placeholder="Enter Ingredient..." />
                 {suggestions.length > 0 && ( 
                     <ul className='suggestion-list'>
                       {suggestions.map(s => (
