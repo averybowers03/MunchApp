@@ -13,7 +13,7 @@ function PantryPage() {
        
        <div className="pantry-header">
         <h2>My Pantry</h2>
-        <span>0 items available</span>
+        <span>{ingredientList.length} items available</span>
        </div>
 
        <IngredientSearch />
@@ -23,9 +23,7 @@ function PantryPage() {
          {ingredientList.map((item, index) => (
            <div className="pantry-item" key={index}>
              <span>{item.ingredient} - {item.qty} {item.unit}</span>
-             <button className="remove-btn" onClick={() => removeIngredient(index)}>
-               Remove
-             </button>
+             <button className="remove-btn" onClick={() => removeIngredient(index)}>x</button>
            </div>
          ))}
          
