@@ -94,9 +94,7 @@ export function RecipeProvider({children} : { children : ReactNode}) {
 
         setRecipeList([]);
 
-        const params = new URLSearchParams({ ingList })
-
-         fetch(`/api/recipes/randomSearch?${params}`)
+        fetch(`/api/recipes/randomSearch?${ingList}`)
         .then(res => res.json())
         .then(data => setRecipeList(data))
         .catch(error => {
