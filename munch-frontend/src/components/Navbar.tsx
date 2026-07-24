@@ -7,7 +7,10 @@ function Navbar() {
   return (
       
         <nav className="app-nav">
-          <div className="logo"><span className="dot"></span>Munch</div>
+          <div className="logo">
+            <span className="dot"></span>
+            <Link to="/pages/AboutPage" className='about-link'>Munch</Link>
+          </div>
           <div className="nav-buttons">
             <Link to="/pages/Dashboard" className="dashboard-link">Dashboard</Link>
             <Link to="/pages/PantryPage" className="pantry-link">Pantry</Link>
