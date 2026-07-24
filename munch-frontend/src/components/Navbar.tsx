@@ -14,6 +14,7 @@ function Navbar() {
           <div className="nav-buttons">
             <Link to="/pages/Dashboard" className="dashboard-link">Dashboard</Link>
             <Link to="/pages/PantryPage" className="pantry-link">Pantry</Link>
+            <Link to="/pages/UserPage" className='user-link'>AB</Link>
           </div>
         </nav>
   );
