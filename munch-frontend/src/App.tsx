@@ -6,6 +6,8 @@ import Navbar from './components/Navbar'
 import { PantryProvider } from './context/PantryContext'
 import { RecipeProvider } from './context/RecipeContext'
 import './global.css'
+import AboutPage from './pages/AboutPage'
+import UserPage from './pages/UserPage'
 
 function App() {
   return (
@@ -14,8 +16,10 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <Routes>
+            <Route path='/pages/AboutPage' element={<AboutPage />} />
             <Route path="/pages/Dashboard" element={<Dashboard />} />
             <Route path="/pages/PantryPage" element={<PantryPage />} />
+            <Route path='/pages/UserPage' element={<UserPage />} />
           </Routes>
         </BrowserRouter>
       </PantryProvider>
