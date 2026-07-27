@@ -1,0 +1,115 @@
+
+.section-hdr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 88px 48px;
+    border-bottom: 1px solid var(--hairline);
+    justify-content: center;
+}
+
+.section {
+    padding: 48px 48px;
+    border-bottom: 1px solid var(--hairline);
+    block-size: border-box;
+}
+
+.header {
+    display: block;
+}
+
+.header h1 {
+    font-size: 60px
+}
+
+.header span {
+    font-variant: small-caps;
+    font-family: monospace;
+    font-size: large;
+}
+
+.header p {
+    font-size: large;
+}
+
+.auth {
+    display: flex;
+    gap: 15px;
+    text-decoration: none;
+    justify-content: baseline;
+    align-items: center;
+}   
+
+.create-btn {
+    text-decoration: none;
+    padding: 12px 8px;
+    color: white;
+    background-color: var(--accent);
+    border-radius: var(--radius);
+}
+
+.signin-btn {
+    text-decoration: none;
+    color: var(--ink);
+    border-bottom: 2px solid var(--ink-faint);
+    padding-bottom: 4px;
+}
+
+.create-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+.signin-btn:hover {
+    border-bottom: 2px solid var(--accent-hover);
+}
+
+.steps-header {
+    display: block;
+    justify-content: center;
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 48px;
+}
+
+.steps-header h2{
+    color: var(--ink);
+    font-size: 30px;
+}
+
+.steps-header span{
+    color: var(--ink-soft);
+}
+
+.step-by-step {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding-top: 48px;
+    align-content: center;
+    justify-content: center;
+}
+
+.step span{
+    font-family: monospace;
+}
+
+.step h2{
+    color: var(--ink);
+    font-size: 30px;
+}
+
+.step p{
+    color: var(--ink-soft);
+    font-size: normal;
+}
+
+.ex-header {
+
+}
+
+.example-grid {
+
+}
+
+.example-card{
+
+}
