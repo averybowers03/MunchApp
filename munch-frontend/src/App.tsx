@@ -8,6 +8,7 @@ import { RecipeProvider } from './context/RecipeContext'
 import './global.css'
 import AboutPage from './pages/AboutPage'
 import UserPage from './pages/UserPage'
+import RecipePage from './pages/RecipePage'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path='/pages/AboutPage' element={<AboutPage />} />
             <Route path="/pages/Dashboard" element={<Dashboard />} />
+            <Route path='/pages/RecipePage/:id' element={<RecipePage />} />
             <Route path="/pages/PantryPage" element={<PantryPage />} />
             <Route path='/pages/UserPage' element={<UserPage />} />
           </Routes>
