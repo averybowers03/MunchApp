@@ -48,11 +48,29 @@ function AboutPage() {
         <div className="section">
             <div className="ex-header">
                 <h2>See it in action!</h2>
-                <span>A search for “stirfry” — matched against a pantry of 18 staples.</span>
+                <span>A search for “breakfast burrito” — matched against a pantry of 18 staples.</span>
             </div>
             <div className="example-grid">
                 <div className="example-card">
-
+                    <img src='' alt=""/>
+                    <div className="card-body">
+                        <h3>title</h3>
+                        <div className="card-meta"> MIN &middot; SERVES </div>
+                    </div>
+                </div>
+                <div className="example-card">
+                    <img src='' alt=""/>
+                    <div className="card-body">
+                        <h3>title</h3>
+                        <div className="card-meta"> MIN &middot; SERVES </div>
+                    </div>
+                </div>
+                <div className="example-card">
+                    <img src='' alt=""/>
+                    <div className="card-body">
+                        <h3>title</h3>
+                        <div className="card-meta"> MIN &middot; SERVES </div>
+                    </div>
                 </div>
             </div>
         </div>

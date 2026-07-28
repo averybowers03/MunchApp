@@ -51,7 +51,7 @@
 .signin-btn {
     text-decoration: none;
     color: var(--ink);
-    border-bottom: 2px solid var(--ink-faint);
+    border-bottom: 1px solid var(--ink-faint);
     padding-bottom: 4px;
 }
 
@@ -73,6 +73,8 @@
 .steps-header h2{
     color: var(--ink);
     font-size: 30px;
+    justify-content: baseline;
+    align-content: baseline;
 }
 
 .steps-header span{
@@ -107,9 +109,42 @@
 }
 
 .example-grid {
+          display:grid; 
+          grid-template-columns: 1fr 1fr 1fr; 
+          gap:20px; 
+          padding: 28px 48px;
+        }
 
+.example-card {
+    background: var(--paper); 
+    border-radius: var(--radius); 
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.example-card{
+.example-card img {
 
+    justify-content: center;
+}
+
+.example-card:hover {
+    cursor: pointer;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    transform: translateY(-4px);
+}
+
+.card-body {
+    padding: 12px 6px;
+    display: block;
+}
+
+.card-body h3 {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.card-meta {
+    
+    font-size: smaller;
+    font-family: monospace;
 }
