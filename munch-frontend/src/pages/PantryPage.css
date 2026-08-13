@@ -128,15 +128,13 @@
 }
 
 .remove-btn {
-
   border: none;
   background-color: var(--paper);
-  color: var(--ink-soft);
-  padding: 10px 20px;
+  fill: var(--ink)
 }
 
 .remove-btn:hover {
-
-  color: rgb(171, 29, 29);
+  fill: rgb(180, 24, 24);
+  transition: fill 0.3s ease-in-out;
   cursor: pointer;
 }
