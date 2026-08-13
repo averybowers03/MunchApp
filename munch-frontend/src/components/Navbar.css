@@ -3,9 +3,9 @@
           display:flex;
           align-items:center;
           justify-content:space-between;
-          padding: 28px 40px;
+          padding: 12px 48px;
           border-bottom: 1px solid var(--hairline);
-          background-color: var(--paper-tint);
+          background-color: var(--paper);
           position: sticky;
         }
 
@@ -13,7 +13,7 @@
           width:8px; 
           height:8px; 
           border-radius:50%; 
-          background: var(--sage-600); 
+          background: var(--accent); 
           display:inline-block; 
         }
 
@@ -35,27 +35,20 @@
         .nav-buttons {
           display: flex;
           gap: 10px;
+          align-items: center;
         }
 
-        .pantry-link, .dashboard-link{
-          cursor: pointer;
-          padding: 8px 12px;
+        .pantry-link, .dashboard-link { 
           text-decoration: none;
           font-size: 1rem;
           font-weight: bold;
           color: var(--ink);
-          border: 1px solid var(--accent);
-          border-radius: var(--radius);
         }
 
         .pantry-link:hover, .dashboard-link:hover {
-          background-color: var(--sage-400);
-          color: var(--paper);
-        }
-
-        .pantry-link:active, .dashboard-link:active {
-
-          background-color: var(--parakeet);
+          color: var(--accent);
+          cursor: pointer;
+          transition: color 0.3s ease-in-out;
         }
 
         .user-link {
@@ -71,4 +64,5 @@
           font-weight: 600;
           text-decoration: none;
           font-family: 'Space Grotesk', sans-serif;
+          margin-left: 10px;
         }
