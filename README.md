@@ -1,2 +1,2 @@
-# Bitewise
+# Munch
 Recipe Search Application
