@@ -1,13 +1,16 @@
 
-import { createContext, useState } from "react";
+import { createContext, useState, Dispatch, SetStateAction } from "react";
 import type { ReactNode } from "react";
 
-type Nutrient = {
+type Nutrition = {
+  nutrients: Nutrient[]
+}
 
+type Nutrient = {
     name: string;
     amount: number;
     unit: string;
-    dailyNeed: number;
+    percentOfDailyNeeds: number;
 }
 
 type MissedIngredients = {
@@ -27,13 +30,26 @@ type Recipe = {
   preparationMinutes: number;
   cookingMinutes: number;
   readyInMinutes: number;
+  sourceName: string;
+  sourceUrl: string;
   servings: number;
-  nutrition : Nutrient[];
+  nutrition : Nutrition;
   summary: string;
   usedIngredientCount : number;
   missedIngredientCount : number;
   missedIngredients : MissedIngredients[];
-};
+  analyzedInstructions : InstructionSection[];
+}
+
+type Step = {
+  number: number
+  step: string
+}
+
+type InstructionSection = {
+  name: string
+  steps: Step[]
+}
 
 export const RecipeContext = createContext({
 
@@ -44,14 +60,17 @@ export const RecipeContext = createContext({
         preparationMinutes: 0,
         cookingMinutes: 0,
         readyInMinutes: 0,
+        sourceName: '',
+        sourceUrl: '',
         servings: 0,
-        nutrition: [] as Nutrient[],
+        nutrition: {nutrients: []},
         summary: '',
         usedIngredientCount: 0,
         missedIngredientCount: 0,
-        missedIngredients: [] as MissedIngredients[]
+        missedIngredients: [] as MissedIngredients[],
+        analyzedInstructions: [] as InstructionSection[]
     },
-    setRecipes: (recipes: Recipe) => {},
+    setRecipes: (() => {}) as Dispatch<SetStateAction<Recipe>>,
     recipeList: [] as Recipe[],
     searchRecipes: (query: string, ingList: string) => {},
     randomRecipes: (ingList: string) => {}
@@ -68,12 +87,15 @@ export function RecipeProvider({children} : { children : ReactNode}) {
         preparationMinutes: 0,
         cookingMinutes: 0,
         readyInMinutes: 0,
+        sourceName: '',
+        sourceUrl: '',
         servings: 0,
-        nutrition: [],
+        nutrition: {nutrients: []},
         summary: '',
         usedIngredientCount: 0,
         missedIngredientCount : 0,
-        missedIngredients : []
+        missedIngredients : [],
+        analyzedInstructions: []
     })
 
     const [recipeList, setRecipeList] = useState<Recipe[]>([]);
