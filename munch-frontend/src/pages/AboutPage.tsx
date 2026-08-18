@@ -14,8 +14,8 @@ function AboutPage() {
                     so results show what you can actually make — not just what looks good.
                 </p>
                 <div className="auth">
-                    <Link to="/pages/Dashboard" className="create-btn">Create account</Link>
-                   <Link to="/pages/Dashboard" className="signin-btn">Sign in instead</Link> 
+                    <Link to="/dashboard" className="create-btn">Create account</Link>
+                   <Link to="/dashboard" className="signin-btn">Sign in instead</Link> 
                 </div>
             </div>
             <div className="labels">
