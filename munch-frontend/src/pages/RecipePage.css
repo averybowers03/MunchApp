@@ -1,0 +1,120 @@
+
+.screen {
+    box-sizing: border-box;
+}
+
+.header-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--hairline);
+    height: 700px;
+}
+
+.recipe-header {
+    display: block;
+    padding: 28px 48px;
+    align-content: center;
+    text-align:center;
+}
+
+.recipe-header h1 {
+    display: block;
+    align-content: baseline;
+    margin-block-end: 0;
+}
+
+.recipe-header span {
+    display:block;
+    align-content: baseline;
+}
+
+.srcName {
+    font-size: 15px;
+}
+
+.srcUrl {
+    font-size: 10px;
+    font-variant: small-caps;
+    margin-top: 15px;
+    text-decoration: none;
+    color: var(--accent);
+}
+
+.meta-grid {
+    display: grid;
+    grid-template-columns: .5fr .5fr .5fr;
+    margin-top: 10px;
+    padding-top: 30px;
+}
+
+.meta-grid span {
+    align-content: center;
+    text-align: center;
+    font-size: 11px;
+}
+
+.cook-time {
+    border-right: 1px solid var(--accent);
+    border-left: 1px solid var(--accent);
+}
+
+.img {
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: .6fr;
+}
+
+.summary {
+    display: block;
+}
+
+.summary p {
+   font-size: large;
+}
+
+.nutrition {
+    display: table;
+}
+
+.nutrition h2 {
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 10px;
+}
+
+.nutrition table {
+    align-items: center;
+    border-spacing: 10px;
+    width: 100%;
+    text-align: left;
+}
+
+.nutrition th {
+    font-size: 18px;
+}
+
+.nutrition tr:nth-child(even) {
+  background-color: var(--accent-light);
+}
+
+.nutrition td {
+    font-size: 14px;
+}
+
+.ingredient-list {
+    display: block;
+}
+
+.ingredient-list h2 {
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 10px;
+}
+
+.instructions {
+    padding: 28px 48px;
+}
