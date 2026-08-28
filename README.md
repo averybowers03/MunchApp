@@ -5,11 +5,11 @@ Munch is a full-stack recipe application that allows for users to search for rec
 
 ## Features
 
-Ingredient-based search -- Add your ingredients to the 'Pantry' and find out what recipes you can cook matched against your ingredients
+Ingredient-based search - Add your ingredients to the 'Pantry' and find out what recipes you can cook matched against your ingredients
 
-Smart auto-complete -- ingredient input powered by the Spoonacular API with debounced search
+Smart auto-complete - ingredient input powered by the Spoonacular API with debounced search
 
-Recipe discovery —- browse recipes with match indicators showing which ingredients you have and what's missing
+Recipe discovery — browse recipes with match indicators showing which ingredients you have and what's missing
 
 Recipe detail pages — full recipe info including instructions, nutrition breakdown, prep/cook times, and source attribution
 
