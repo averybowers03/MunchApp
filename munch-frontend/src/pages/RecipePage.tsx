@@ -13,17 +13,11 @@ const {recipes, setRecipes} = useContext(RecipeContext)
 
 useEffect(() => {
       
-     fetch(`/api/recipes/searchById?id=${716429}`)
+     fetch(`/api/recipes/searchById?id=${id}`)
       .then(res => res.json())
       .then(data => setRecipes(data))
       .catch(error => {
       console.error('Error fetching ingredients:', error)}); 
-    
-      fetch(`/api/recipes/getInstructions?id=${id}`)
-      .then(res => res.json())
-      .then(data => setRecipes(prev => ({ ...prev, analyzedInstructions: data })))
-      .catch(error => {
-      console.error('Error fetching ingredients:', error)});
       
     }, [id]);
 
@@ -51,7 +45,7 @@ useEffect(() => {
 
             </div>
 
-            <div className='recipe-grid'>
+            <div className='recipe-info-grid'>
 
                 <div className='summary'>
                         <p>{recipes.summary}</p>
@@ -83,24 +77,24 @@ useEffect(() => {
                 <div className='ingredient-list'>
                     <h2>Ingredients</h2>
                     <ul>
-                        {/*<li>sum</li>
-                        <li>sum else</li>
-                        {recipes.missedIngredients.map((ingredient, i) => (
-                        <li key={i}>{ingredient.name}</li>
-                        ))}*/}
+                        
+                        {recipes.extendedIngredients?.map((ingredient, i) => (
+                        <li key={i}>{ingredient.name} - {ingredient.amount} {ingredient.unit}</li>
+                        ))}
                     </ul>
                 </div>
 
                 <div className='instructions'>
                     <h2>Instructions</h2>
                 
-                {recipes.analyzedInstructions.map((section, i) => (
+                {recipes.analyzedInstructions?.map((section, i) => (
                     <div key={i}>
-                        {section.name && <h3>{section.name}</h3>}
+                        {section.name && <h2>{section.name}</h2>}
                         <ol>
                             {section.steps.map(step => (
                                 <li key={step.number}>{step.step}</li>
                                 ))}
+
                         </ol>
                     </div>
                 ))}
