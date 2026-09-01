@@ -47,7 +47,7 @@ function Dashboard() {
       <div className="recipe-grid">
         
         {recipeList.map(recipe => (
-          <Link to={`/pages/RecipePage/${recipe.id}`} key={recipe.id} className="recipe-card">
+          <Link to={`/recipe/${recipe.id}`} key={recipe.id} className="recipe-card">
             <img src={recipe.image} alt=""/>
             <div className="card-body">
               <h3>{recipe.title}</h3>
@@ -55,14 +55,6 @@ function Dashboard() {
             </div>
           </Link>
         ))}
-
-        <Link to={`/pages/RecipePage/${716429}`}  className="recipe-card">
-          <img src="https://spoonacular.com/recipeImages/716429-312x231.jpg" alt=""/>
-          <div className="card-body">
-            <h3>title</h3>
-            <div className="card-meta"> MIN &middot; SERVES </div>
-          </div>
-        </Link>
         
       </div>  
         
