@@ -22,6 +22,25 @@ type MissedIngredients = {
     unitShort: string;
 }
 
+type Step = {
+  number: number
+  step: string
+}
+
+type InstructionSection = {
+  name: string
+  steps: Step[]
+}
+
+type ExtendedIngredients = {
+    aisle: string
+    amount: number
+    id: number
+    name: string
+    original: string
+    unit: string
+}
+
 type Recipe = {
 
   id: number;
@@ -39,16 +58,7 @@ type Recipe = {
   missedIngredientCount : number;
   missedIngredients : MissedIngredients[];
   analyzedInstructions : InstructionSection[];
-}
-
-type Step = {
-  number: number
-  step: string
-}
-
-type InstructionSection = {
-  name: string
-  steps: Step[]
+  extendedIngredients: ExtendedIngredients[];
 }
 
 export const RecipeContext = createContext({
@@ -68,7 +78,8 @@ export const RecipeContext = createContext({
         usedIngredientCount: 0,
         missedIngredientCount: 0,
         missedIngredients: [] as MissedIngredients[],
-        analyzedInstructions: [] as InstructionSection[]
+        analyzedInstructions: [] as InstructionSection[],
+        extendedIngredients: [] as ExtendedIngredients[]
     },
     setRecipes: (() => {}) as Dispatch<SetStateAction<Recipe>>,
     recipeList: [] as Recipe[],
@@ -95,7 +106,8 @@ export function RecipeProvider({children} : { children : ReactNode}) {
         usedIngredientCount: 0,
         missedIngredientCount : 0,
         missedIngredients : [],
-        analyzedInstructions: []
+        analyzedInstructions: [],
+        extendedIngredients: []
     })
 
     const [recipeList, setRecipeList] = useState<Recipe[]>([]);
