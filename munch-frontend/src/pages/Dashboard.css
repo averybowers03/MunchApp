@@ -89,10 +89,10 @@
         }
 
         .sort-select {
-          border:1px solid var(--hairline-soft); 
+          border: 1px solid var(--hairline-soft); 
           border-radius: var(--radius);
-          padding:4px 10px; 
-          font-size:13px; 
+          padding: 4px 10px; 
+          font-size: 13px; 
           color: var(--ink); 
           background:var(--sage-50);
         }
@@ -107,23 +107,21 @@
         }
 
         .recipe-grid {
-          display:grid; 
-          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
-          gap:20px; 
+          display: grid; 
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+          gap: 20px; 
           padding: 28px 48px;
         }
 
         .recipe-card {
+          display: block;
           background: var(--paper); 
           border-radius: var(--radius); 
           overflow: hidden;
           box-shadow: 0 2px 4px rgba(0,0,0,0.1);
           text-decoration: none;
           color: var(--ink);
-        }
-
-        .recipe-card img {
-            justify-content: center;
+          width: 300px;
         }
 
         .recipe-card:hover {
@@ -134,17 +132,21 @@
         }
 
         .card-body {
-          padding: 12px 6px;
+          padding: 6px 12px;
           display: block;
         }
 
         .card-body h3 {
           font-size: 1rem;
           font-weight: normal;
+          margin-block-start: 0;
+          margin-block-end: 8px;
         }
 
         .card-meta {
           
+          padding-top: 8px;
+          border-top: 1px solid var(--hairline);
           font-size: smaller;
           font-family: monospace;
         }

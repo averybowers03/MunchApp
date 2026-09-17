@@ -19,7 +19,7 @@ function AboutPage() {
                 </div>
             </div>
             <div className="labels">
-                sum
+                (WIP)
             </div>
         </div>
         <div className="section">
@@ -45,7 +45,7 @@ function AboutPage() {
                 </div>
             </div>
         </div>
-        <div className="section">
+        <div className="ex-section">
             <div className="ex-header">
                 <h2>See it in action!</h2>
                 <span>A search for “breakfast burrito” — matched against a pantry of 18 staples.</span>

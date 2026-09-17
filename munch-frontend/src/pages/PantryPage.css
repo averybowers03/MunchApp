@@ -117,13 +117,11 @@
   padding: 20px 0;
   display: flex;
   flex-direction: row;
-  align-items:baseline;
-  text-align: center;
+  align-items:center;
   justify-content: space-between;
 }
 
 .pantry-item span {
-  font-variant: small-caps;
   font-size: 18px;
 }
 
